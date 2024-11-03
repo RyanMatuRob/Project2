@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <h1>Recipe Heaven</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Favourites</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-btn">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Under 5 minutes</a></li>
+                            <li><a href="#">Main Courses</a></li>
+                            <li><a href="#">Desserts</a></li>
+                            <li><a href="#">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" id="loginBtn">Login</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search recipes...">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+  <!-- Login and Registration Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">Login to Recipe Heaven</h2>
+        
+        <!-- Login Form -->
+        <form id="loginForm">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <!-- Register Form (Initially Hidden) -->
+        <form id="registerForm" style="display: none;">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+
+            <label for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" placeholder="Enter your email" required>
+
+            <label for="registerPassword">Password</label>
+            <input type="password" id="registerPassword" placeholder="Enter your password" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+
+            <button type="submit" class="login-btn">Register</button>
+        </form>
+
+        <!-- Toggle between Login and Register -->
+        <p id="toggleText">Don't have an account? <a href="#" id="toggleForm">Register here</a></p>
+    </div>
+</div>
+
+<!-- Recipe Form Modal -->
+<div id="recipeModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeRecipeModal()">&times;</span>
+        <h2>Add a New Recipe</h2>
+        <form id="recipeForm" enctype="multipart/form-data" method="post" action="/add-recipe">
+            <label for="recipeName">Recipe Name:</label>
+            <input type="text" id="recipeName" name="name" required>
+            
+            <label for="recipeOwner">Recipe Owner:</label>
+            <input type="text" id="recipeOwner" name="owner" required>
+            
+            <label for="ingredients">Ingredients (comma-separated):</label>
+            <textarea id="ingredients" name="ingredients" required></textarea>
+            
+            <label for="instructions">Instructions:</label>
+            <textarea id="instructions" name="instructions" required></textarea>
+            
+            <label for="recipeImage">Recipe Image:</label>
+            <input type="file" id="recipeImage" name="image" accept="image/*" required>
+            
+            <button type="submit">Save Recipe</button>
+        </form>
+    </div>
+</div>
+
+
+    <!-- Carousel -->
+    <section class="carousel">
+        <div class="slides">
+            <div class="slide"><img src="pictures/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon.jpg" alt="Recipe 1"></div>
+            <div class="slide"><img src="pictures/salad.jpg" alt="Recipe 2"></div>
+            <div class="slide"><img src="pictures/top-view-delicious-soup-assortment.jpg" alt="Recipe 3"></div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    <!-- Call to Action -->
+<section class="cta">
+    <h2>Join Recipe Heaven Today!</h2>
+    <p>Get access to thousands of recipes, save your favorites, and share your own creations!</p>
+    <a href="#" id="cta-btn">Sign Up Now</a>
+</section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Recipe Heaven. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
