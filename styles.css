@@ -176,7 +176,7 @@ footer {
     overflow: hidden;
 }
 
-.modal-content form {
+.modal-content .recipeform form {
     display: flex;
     flex-direction: column;
     gap: 20px; /* Increase the space between form elements */
@@ -269,7 +269,7 @@ footer {
 }
 
 /* Recipe Modal Styles */
-#recipeModal {
+#recipeModal #recipeForm{
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -280,7 +280,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#recipeModal .modal-content {
+#recipeModal #recipeForm .modal-content {
     background-color: white;
     margin: 5% auto;
     padding: 20px;
@@ -291,7 +291,7 @@ footer {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#recipeModal label, #recipeModal input, #recipeModal textarea {
+#recipeModal #recipeForm label, #recipeModal #recipeForm input, #recipeModal #recipeForm textarea {
     display: block;
     margin-bottom: 10px;
     width: 100%;
